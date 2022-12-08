@@ -22,8 +22,8 @@ public class IndexController : Controller   // Remember inheritance?
     }
 
     [HttpPost("process")]
-    public IActionResult Process(string name, string dojo, string flang, string comment)
+    public IActionResult Process(Survey survey)
     {
-        return RedirectToAction("ViewRes", new { name = name, dojo = dojo, flang = flang, comment = comment });
+        return RedirectToAction("ViewRes", new { name = survey.Name, dojo = survey.Dojo, flang = survey.Flang, comment = survey.Comment });
     }
 }
