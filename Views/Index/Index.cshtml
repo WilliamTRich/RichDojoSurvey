@@ -12,22 +12,28 @@
 
 <body>
     <div class="container d-flex flex-column">
+
+        @model RichDojoSurvey.Models.Survey
         <form action="process" method="post" class="container d-flex flex-column">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" name="name">
-            <label for="dojo" class="form-label">Dojo Location:</label>
-            <select name="dojo">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name">
+            <span asp-validation-for="Name"></span>
+            <label asp-for="Dojo" class="form-label"></label>
+            <select asp-for="Dojo">
                 <option value="Seattle">Seattle</option>
                 <option value="Burbank">Burbank</option>
             </select>
-            <label for="flang" class="form-label">Favorite Language:</label>
-            <select name="flang">
+            <span asp-validation-for="Dojo"></span>
+            <label asp-for="Flang" class="form-label"></label>
+            <select asp-for="Flang">
                 <option value="cs">C#</option>
                 <option value="java">Java</option>
                 <option value="python">Python</option>
             </select>
-            <label for="comment" class="form-label">Comment:</label>
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            <span asp-validation-for="Flang"></span>
+            <label asp-for="Comment" class="form-label"></label>
+            <textarea asp-for="Comment" cols="30" rows="10"></textarea>
+            <span asp-validation-for="Comment"></span>
             <button type="submit">Submit</button>
         </form>
     </div>
